@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Parallax Experiment</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script type='text/javascript' src='https://buildbetter.technology/wp-includes/js/jquery/jquery.js'></script>
+        <script type='text/javascript' src='https://buildbetter.technology/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+        <script type="text/javascript">
+        jQuery(document).ready(function($){
+            $(window).scroll(function() {
+                parallax();
+                })
+            function parallax() {
+            var vH = $(window).height();
+            var wScroll = $(window).scrollTop();
+            $('.parallax').css('background-position', 'right ' + (wScroll*-0.025) +'px');
+            $('.parallaxfg').css('top', 50+(wScroll*-0.05) +'%');
+            $('.parallaxmg').css('top', 120+(wScroll*-0.07) +'%');
+            }
+        })
+        </script>
+        <style type="text/css">
+        *, html, div {margin:0; padding:0;}
+        body {margin:0; padding:0;background-color:#c9c4bf; font-size: medium; color:#FFF;}
+        @import url('https://fonts.googleapis.com/css?family=Tomorrow&display=swap');
+        h1, h2, h3, h4, .item-title, .load-more {font-family: 'Tomorrow', sans-serif !important; font-weight:normal; color:#FFF;}
+        .slideCopyContainer {display:block; width:50%; position:absolute; top:30%;  left:50%; margin-left:-25%; min-width:300px;  text-shadow: -1px -1px 8px rgba(0,0,0,0.3); z-index:10;}
+        @keyframes covidrotate {
+                from {transform: rotate(0deg);}
+                to {transform: rotate(360deg);}
+        }
+        #covid_fg {
+            animation-name: covidrotate;
+            animation-duration: 300s;
+            animation-iteration-count: infinite;
+        }
+        #covid_mg {
+            animation-name: covidrotate;
+            animation-duration: 60s;
+            animation-iteration-count: infinite;
+            animation-direction: reverse;
+        }
+        
+        </style>
+
+    </head>
+    <body>
+        <div style="position:relative; display:block; height:100vh; background:#454545;">1st div</div>
+        <div id="fabfaceslide" class="parallax" style="position:relative; height:100vh; text-align:center;background-image: url(images/fabface-bkgd.jpg); background-size: cover; background-position:right bottom; background-repeat: no-repeat; background-attachment: fixed;">
+            <div class="slideCopyContainer">
+                    <h1>Staying Productive During<br/>The Pandemic</h1>
+                    <p>Launching a new brand and online store <br>in one week under quarrantine.</p>
+                    <img src="images/fabwebsite.png" style="width:50%; min-width:300px; height:auto; margin-top:40px;"/>
+            </div>
+            <div id="covid_fg" class="parallaxfg" style="position:absolute; top:6%; left:5%; z-index:5; display:block; width:20%; min-width:200px; height:auto;">
+                <img src="images/fab_covid19_foreground.png" style="width:100%; height:auto;">
+            </div>
+            <div id="covid_mg" class="parallaxmg" style="position:absolute; top:60%; left:25%; z-index:5; display:block; width:12%; min-width:100px; height:auto;">
+                <img src="images/fab_covid19_middleground.png" style="width:100%; height:auto;">
+            </div>
+            <div id="covid_bg" style="position:absolute; top:40%; left:63%; z-index:5; display:block; width:10px; height:10px; border-radius: 5px; background-color:#a82828; filter: blur(10px);
+            -webkit-filter: blur(5px);">
+            </div>
+            <!-- <div id="fabmodel1" style="position:absolute; bottom:0px; right:0px; z-index:5; display:block; width:50%; min-width:300px; height:auto;">
+                <img src="images/fab_model1.png" style="width:100%; min-width:300px; height:auto;">
+            </div>-->
+        </div>
+        <div id="unicornslide" style="position:relative; height:100vh; text-align:center; background-image: url(images/unicorn-bkgd.jpg);background-size: cover; background-position: top left;">
+            <div class="slideCopyContainer" >
+                <h1>We are the unicorns you seek.</h1>
+                <p>Design + Development. BBT is an agency<br/> 
+                    that works with organizations<br/>
+                    that want to improve their interactive products,<br/> 
+                    communications, and user experiences.</p>
+            </div> 
+        </div>
+
+        
+    </body>
+</html>
