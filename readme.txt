@@ -1,0 +1,1 @@
+This is a test file. Setting up local dev environment. Adding a file from desktop and pushing via command line to github. Please ignore. Thanks. 
